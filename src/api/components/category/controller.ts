@@ -16,8 +16,8 @@ export const createCategory = async (name: string) => {
 export const listCategory = async () => {
 	let filter = {};
 	try {
-		return await listCategoryStore(filter);
+	  return await listCategoryStore(filter);
 	} catch (err) {
-		throw err;
+	  throw err;
 	}
 }

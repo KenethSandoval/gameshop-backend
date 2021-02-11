@@ -26,3 +26,16 @@ export const listCategoryStore = async (filter: Object) => {
 		throw err;
 	}
 }
+
+export const deleteCategoryStore = async (_id: string) => {
+  try{
+    const categoryDelete = await Category.findByIdAndDelete(_id);
+    if (!categoryDelete) {
+      throw {message: `Category with id ${_id} not exists`, code: 404} 
+    }
+    return categoryDelete;
+
+  } catch (err) {
+    throw err;
+  }
+}
