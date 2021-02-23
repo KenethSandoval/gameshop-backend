@@ -1,8 +1,8 @@
 import { Application } from 'express';
-import routerCategory from '../api/routes/routes'; 
+import router from '../routes'; 
 
 const routes = (app: Application) => {
-	app.use('/api', routerCategory);
+	app.use('/api', router);
 }
 
 export default routes;
