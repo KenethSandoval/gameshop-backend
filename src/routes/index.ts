@@ -3,7 +3,9 @@ import {
   createCategory,
   listCategory,
   updateCategory,
-  deleteCategory  
+  deleteCategory,
+
+  createProduct
 } from '../controllers';
 
 const router = Router();
@@ -13,6 +15,10 @@ router.route('/category')
   .post(createCategory)
   .put(updateCategory)
   .delete(deleteCategory)
+
+
+router.route('/product')
+  .post(createProduct)
 
 export default router;
 

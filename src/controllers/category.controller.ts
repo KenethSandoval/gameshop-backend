@@ -20,15 +20,16 @@ export const createCategory: Handler = async (req, res) => {
 
   if (name) {
     try {
-      const categoryAdd = new Category({
-        ...req.body
-      });
       
       const categoryExists = await Category.findOne({name});
 
       if (categoryExists) {
        return error(res, `Category with name ${name} already exists`, 400)
       }
+      
+      const categoryAdd = new Category({
+        ...req.body
+      });
       
       await categoryAdd.save();
 
