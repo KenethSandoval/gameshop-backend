@@ -11,7 +11,7 @@ import routes from './network/router';
 
 const initializeMongo = async () => {
 	try {
-		await mongoose.connect(process.env.MONGOURI, {
+		await mongoose.connect(process.env.MONGOURI || 'mongodb://localhost:27017/gameshop', {
 			 useNewUrlParser: true,
 			 useUnifiedTopology: true,
 			 useFindAndModify: false,

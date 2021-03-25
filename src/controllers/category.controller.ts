@@ -54,7 +54,7 @@ export const updateCategory: Handler = async (req, res) => {
 
     const categoryUpdate = await Category.findByIdAndUpdate(_id, req.body, {new: true});
     
-   return success(res, { message: '', data: categoryUpdate }, 200);
+    return success(res, { message: '', data: categoryUpdate }, 200);
 
   } catch (err) {
     return error(res, err.message, 500);
