@@ -8,13 +8,17 @@ import {
   createProduct,
   listProduct,
   updateProduct,
-  deletedProduct
+  deletedProduct,
+
+  createUser
 } from '../controllers';
+
+import { verifyToken } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 router.route('/category')
-  .get(listCategory)
+  .get(verifyToken, listCategory)
   .post(createCategory)
   .put(updateCategory)
   .delete(deleteCategory)
@@ -25,6 +29,9 @@ router.route('/product')
   .get(listProduct)
   .put(updateProduct)
   .delete(deletedProduct)
+
+router.route('/user')
+  .post(createUser)
 
 export default router;
 

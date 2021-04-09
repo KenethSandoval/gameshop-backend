@@ -1,6 +1,7 @@
 interface IPayload {
   user: {
     id: string;
+    rol: string;
   };
 }
 
@@ -16,4 +17,17 @@ interface IProduct extends TMongoDocument {
   sales: number;
   price: number;
   category: TMongoId[];
+}
+
+interface ICart extends TMongoDocument {
+  name: TMongoId[];
+  product: TMongoId[];
+}
+
+interface IUser extends TMongoDocument {
+  name: string;
+  lastname: string
+  email: string;
+  password: string;
+  rol: string;
 }

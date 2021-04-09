@@ -13,4 +13,6 @@ router.route('/product')
     .get(controllers_1.listProduct)
     .put(controllers_1.updateProduct)
     .delete(controllers_1.deletedProduct);
+router.route('/user')
+    .post(controllers_1.createUser);
 exports.default = router;
